@@ -12,10 +12,10 @@ import android.widget.RadioGroup;
 
 public class EditActivity extends AppCompatActivity {
 
-    EditText etID,etTitle,etSinger,etYear;
+    EditText etID, etTitle, etSinger, etYear;
     RadioGroup rgStars;
-    RadioButton r1,r2,r3,r4,r5;
-    Button btnUpdate,btnDelete,btnCancel;
+    RadioButton r1, r2, r3, r4, r5;
+    Button btnUpdate, btnDelete, btnCancel;
     Song data;
 
     @Override
@@ -38,28 +38,23 @@ public class EditActivity extends AppCompatActivity {
         r5 = (RadioButton) findViewById(R.id.rb5);
 
         Intent i = getIntent();
-        data = (Song)i.getSerializableExtra("data");
+        data = (Song) i.getSerializableExtra("data");
 
         etID.setText(data.get_id() + "");
         etTitle.setText(data.getTitle());
         etSinger.setText(data.getSingers());
         etYear.setText(data.getYear() + "");
-        if(data.getStars() == 1){
+        if (data.getStars() == 1) {
             r1.setChecked(true);
-        }
-        else if (data.getStars() == 2){
+        } else if (data.getStars() == 2) {
             r2.setChecked(true);
-        }
-        else if (data.getStars() == 3){
+        } else if (data.getStars() == 3) {
             r3.setChecked(true);
-        }
-        else if (data.getStars() == 4){
+        } else if (data.getStars() == 4) {
             r4.setChecked(true);
-        }
-        else if (data.getStars() == 5){
+        } else if (data.getStars() == 5) {
             r5.setChecked(true);
-        }
-        else{
+        } else {
         }
 
         btnUpdate.setOnClickListener(new View.OnClickListener() {
@@ -97,3 +92,4 @@ public class EditActivity extends AppCompatActivity {
         });
 
     }
+}

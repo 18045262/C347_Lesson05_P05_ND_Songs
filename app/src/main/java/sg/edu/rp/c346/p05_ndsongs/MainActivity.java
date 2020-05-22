@@ -38,11 +38,6 @@ public class MainActivity extends AppCompatActivity {
         etSingers = findViewById(R.id.etSinger);
         etYear = findViewById(R.id.etYear);
         rgStar = findViewById(R.id.rgStars);
-        tv = findViewById(R.id.tv);
-
-
-
-
 
         btnInsert.setOnClickListener(new View.OnClickListener() {
             @Override

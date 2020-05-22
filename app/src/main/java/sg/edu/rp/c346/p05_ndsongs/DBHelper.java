@@ -101,7 +101,7 @@ public class DBHelper extends SQLiteOpenHelper {
         values.put(COLUMN_SONG_YEAR, data.getYear());
         values.put(COLUMN_SONG_STAR, data.getStars());
         String condition = COLUMN_ID + "= ?";
-        String[] args = {String.valueOf(data.getId())};
+        String[] args = {String.valueOf(data.get_id())};
         int result = db.update(TABLE_SONG, values, condition, args);
         db.close();
         return result;
