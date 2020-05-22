@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -19,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     EditText etTitle, etSingers, etYear;
     RadioGroup rgStar;
     RadioButton rbSelected;
+    TextView tv;
 
     String title, singer;
     int year, star;
@@ -36,6 +38,10 @@ public class MainActivity extends AppCompatActivity {
         etSingers = findViewById(R.id.etSinger);
         etYear = findViewById(R.id.etYear);
         rgStar = findViewById(R.id.rgStars);
+        tv = findViewById(R.id.tv);
+
+
+
 
 
         btnInsert.setOnClickListener(new View.OnClickListener() {
@@ -49,13 +55,13 @@ public class MainActivity extends AppCompatActivity {
                 int selectedStar = Integer.parseInt(rbSelected.getText().toString());
 
                 DBHelper dbh = new DBHelper(MainActivity.this);
-                dbh.insertNote(title,singer,year,selectedStar);
+                long inserted_id = dbh.insertNote(title,singer,year,selectedStar);
                 dbh.close();
-                Toast.makeText(MainActivity.this, "Insert successful", Toast.LENGTH_SHORT).show();
+                if (inserted_id != -1){
+                    Toast.makeText(MainActivity.this, "Insert successful",
+                            Toast.LENGTH_SHORT).show();
 
-
-
-
+                }
             }
         });
 

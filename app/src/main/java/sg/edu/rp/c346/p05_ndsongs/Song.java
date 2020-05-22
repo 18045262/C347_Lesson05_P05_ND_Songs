@@ -1,26 +1,29 @@
 package sg.edu.rp.c346.p05_ndsongs;
 
-public class Song {
-    private int id;
+import java.io.Serializable;
+
+public class Song implements Serializable {
+
+
+    private int _id;
     private String title;
     private String singers;
     private int year;
     private int stars;
 
-    public Song(int id, String title, String singers, int year, int stars){
-        this.id = id;
+    public Song(int _id, String title, String singers, int year, int stars){
+        this._id = _id;
         this.title = title;
         this.singers = singers;
         this.year = year;
         this.stars = stars;
     }
-
-    public int getId() {
-        return id;
+    public int get_id() {
+        return _id;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void set_id(int _id) {
+        this._id = _id;
     }
 
     public String getTitle() {
