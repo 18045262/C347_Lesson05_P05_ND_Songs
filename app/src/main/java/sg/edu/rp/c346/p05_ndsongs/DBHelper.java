@@ -71,8 +71,7 @@ public class DBHelper extends SQLiteOpenHelper {
         String selectQuery = "SELECT " + COLUMN_ID + ","
                 + COLUMN_SONG_TITLE+ "," + COLUMN_SONG_SINGERS + ","
                 + COLUMN_SONG_YEAR + "," + COLUMN_SONG_STAR
-                + " FROM " + TABLE_SONG
-                + " WHERE " + COLUMN_SONG_STAR + " = 5";
+                + " FROM " + TABLE_SONG;
 
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery(selectQuery, null);
