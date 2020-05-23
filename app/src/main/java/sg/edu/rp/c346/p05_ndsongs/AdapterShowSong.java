@@ -14,11 +14,11 @@ import java.util.ArrayList;
 
 public class AdapterShowSong extends ArrayAdapter<Song> {
 
-    Context context;
-    ArrayList<Song> songs;
-    int resource;
-    ImageView iv1, iv2, iv3, iv4, iv5;
-    TextView tvYear, tvTitle, tvSinger;
+    private Context context;
+    private ArrayList<Song> songs;
+    private int resource;
+    private ImageView iv1, iv2, iv3, iv4, iv5;
+    private TextView tvYear, tvTitle, tvSinger;
 
     public AdapterShowSong(Context context, int resource, ArrayList<Song> songs) {
         super(context, resource, songs);
@@ -49,13 +49,17 @@ public class AdapterShowSong extends ArrayAdapter<Song> {
 
         if(song.getStars() >= 1){
             iv1.setImageResource(android.R.drawable.btn_star_big_on);
-        }if(song.getStars() >= 2){
+        }
+        if(song.getStars() >= 2){
             iv2.setImageResource(android.R.drawable.btn_star_big_on);
-        }if(song.getStars() >= 3){
+        }
+        if(song.getStars() >= 3){
             iv3.setImageResource(android.R.drawable.btn_star_big_on);
-        }if(song.getStars() >= 4){
+        }
+        if(song.getStars() >= 4){
             iv4.setImageResource(android.R.drawable.btn_star_big_on);
-        }if(song.getStars() >= 5){
+        }
+        if(song.getStars() == 5){
             iv5.setImageResource(android.R.drawable.btn_star_big_on);
         }
 

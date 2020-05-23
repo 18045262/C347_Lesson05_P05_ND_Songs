@@ -14,7 +14,7 @@ public class EditActivity extends AppCompatActivity {
 
     EditText etID, etTitle, etSinger, etYear;
     RadioGroup rgStars;
-    RadioButton r1, r2, r3, r4, r5;
+    RadioButton rb1, rb2, rb3, rb4, rb5;
     Button btnUpdate, btnDelete, btnCancel;
     Song data;
 
@@ -23,19 +23,19 @@ public class EditActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit);
 
-        rgStars = (RadioGroup) findViewById(R.id.rgStars);
-        etID = (EditText) findViewById(R.id.etID);
-        etTitle = (EditText) findViewById(R.id.etEditTitle);
-        etSinger = (EditText) findViewById(R.id.etEditSinger);
-        etYear = (EditText) findViewById(R.id.etEditYear);
-        btnUpdate = (Button) findViewById(R.id.btnUpdate);
-        btnDelete = (Button) findViewById(R.id.btnDelete);
-        btnCancel = (Button) findViewById(R.id.btnCancel);
-        r1 = (RadioButton) findViewById(R.id.rb1);
-        r2 = (RadioButton) findViewById(R.id.rb2);
-        r3 = (RadioButton) findViewById(R.id.rb3);
-        r4 = (RadioButton) findViewById(R.id.rb4);
-        r5 = (RadioButton) findViewById(R.id.rb5);
+        rgStars = findViewById(R.id.rgStars);
+        etID = findViewById(R.id.etID);
+        etTitle =  findViewById(R.id.etEditTitle);
+        etSinger = findViewById(R.id.etEditSinger);
+        etYear = findViewById(R.id.etEditYear);
+        btnUpdate = findViewById(R.id.btnUpdate);
+        btnDelete = findViewById(R.id.btnDelete);
+        btnCancel = findViewById(R.id.btnCancel);
+        rb1 = findViewById(R.id.rb1);
+        rb2 = findViewById(R.id.rb2);
+        rb3 = findViewById(R.id.rb3);
+        rb4 = findViewById(R.id.rb4);
+        rb5 = findViewById(R.id.rb5);
 
         Intent i = getIntent();
         data = (Song) i.getSerializableExtra("data");
@@ -45,16 +45,15 @@ public class EditActivity extends AppCompatActivity {
         etSinger.setText(data.getSingers());
         etYear.setText(data.getYear() + "");
         if (data.getStars() == 1) {
-            r1.setChecked(true);
+            rb1.setChecked(true);
         } else if (data.getStars() == 2) {
-            r2.setChecked(true);
+            rb2.setChecked(true);
         } else if (data.getStars() == 3) {
-            r3.setChecked(true);
+            rb3.setChecked(true);
         } else if (data.getStars() == 4) {
-            r4.setChecked(true);
+            rb4.setChecked(true);
         } else if (data.getStars() == 5) {
-            r5.setChecked(true);
-        } else {
+            rb5.setChecked(true);
         }
 
         btnUpdate.setOnClickListener(new View.OnClickListener() {

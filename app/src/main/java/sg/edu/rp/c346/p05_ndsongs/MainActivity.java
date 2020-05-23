@@ -39,6 +39,10 @@ public class MainActivity extends AppCompatActivity {
         etYear = findViewById(R.id.etYear);
         rgStar = findViewById(R.id.rgStars);
 
+
+
+
+
         btnInsert.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
